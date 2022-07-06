@@ -1,0 +1,23 @@
+{
+  "name": "trpc-bun",
+  "scripts": {
+    "dx": "run-p serve:*",
+    "serve:server": "bun server/index.ts",
+    "serve:client": "bun dev"
+  },
+  "dependencies": {
+    "@trpc/client": "10.0.0-alpha.22",
+    "@trpc/react": "10.0.0-alpha.22",
+    "@trpc/server": "10.0.0-alpha.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.1",
+    "zod": "^3.17.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "npm-run-all": "^4.1.5",
+    "react-refresh": "^0.14.0"
+  }
+}
