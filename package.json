@@ -1,9 +1,9 @@
 {
   "name": "trpc-bun",
   "scripts": {
-    "dx": "run-p serve:*",
-    "serve:server": "bun server/index.ts",
-    "serve:client": "bun dev"
+    "dx": "run-p watch:*",
+    "watch:server": "nodemon --config server/nodemon.json server/index.ts",
+    "watch:client": "bun dev"
   },
   "dependencies": {
     "@trpc/client": "10.0.0-alpha.22",
@@ -17,6 +17,9 @@
   "devDependencies": {
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "bun-livereload": "^1.0.3",
+    "bun-types": "^0.0.83",
+    "nodemon": "^2.0.19",
     "npm-run-all": "^4.1.5",
     "react-refresh": "^0.14.0"
   }

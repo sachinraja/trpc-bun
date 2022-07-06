@@ -4,13 +4,13 @@ import { appRouter } from './router'
 export default {
   port: 5000,
   async fetch(request: Request) {
-    if (request.method === 'OPTIONS') return new Response(undefined, {
+    if (request.method === 'OPTIONS') return new Response('', {
       status: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*'
       }
-  })
+    })
 
     const response = await fetchRequestHandler({
       router: appRouter,
