@@ -1,9 +1,9 @@
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch'
-import { appRouter } from './router'
+import { liveReload } from 'bun-livereload'
 
 export default {
   port: 5000,
-  async fetch(request: Request) {
+  fetch: liveReload(async (request: Request) => {
     if (request.method === 'OPTIONS') return new Response('', {
       status: 200,
       headers: {
@@ -11,15 +11,17 @@ export default {
         'Access-Control-Allow-Headers': '*'
       }
     })
-
+    
+    const { appRouter } = await import('./router')
     const response = await fetchRequestHandler({
       router: appRouter,
       endpoint: '',
-      req: request
+      req: request,
+      createContext: async () => {},
     })
 
     response.headers.set('Access-Control-Allow-Origin', '*')
 
     return response
-  },
+  })
 }

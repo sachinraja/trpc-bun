@@ -2,16 +2,16 @@
   "name": "trpc-bun",
   "scripts": {
     "dx": "run-p watch:*",
-    "watch:server": "nodemon --config server/nodemon.json server/index.ts",
+    "watch:server": "bun server/index.ts",
     "watch:client": "bun dev"
   },
   "dependencies": {
-    "@trpc/client": "10.0.0-alpha.22",
-    "@trpc/react": "10.0.0-alpha.22",
-    "@trpc/server": "10.0.0-alpha.22",
+    "@tanstack/react-query": "^4.10.1",
+    "@trpc/client": "10.0.0-proxy-beta.15",
+    "@trpc/react": "10.0.0-proxy-beta.15",
+    "@trpc/server": "10.0.0-proxy-beta.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.1",
     "zod": "^3.17.3"
   },
   "devDependencies": {
@@ -19,7 +19,6 @@
     "@types/react-dom": "^18.0.6",
     "bun-livereload": "^1.0.3",
     "bun-types": "^0.0.83",
-    "nodemon": "^2.0.19",
     "npm-run-all": "^4.1.5",
     "react-refresh": "^0.14.0"
   }
